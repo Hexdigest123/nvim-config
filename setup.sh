@@ -21,6 +21,9 @@ fi
 echo "Cloning requirements for nvim config..."
 exec "git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim"
 echo "Cloned required packer.nvim"
+echo "Installing Node.JS"
+exec "$package_to_use install node"
+echo "Installed Node.JS"
 
 if [ package_to_use = "pacman" ]; then
   echo "You need to install and build a special package: https://aur.archlinux.org/packages/nvim-packer-git/"
