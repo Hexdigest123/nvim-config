@@ -1,5 +1,4 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
 vim.cmd.packadd('packer.nvim')
 
@@ -24,14 +23,7 @@ return require('packer').startup(function(use)
           }
       end
   })
-
-  use({
-      "folke/tokyonight.nvim",
-      lazy = false,
-      priority = 1000,
-      opts = {},
-  })
-
+  use({ 'rose-pine/neovim', as = 'rose-pine' })
   use {
 			'nvim-treesitter/nvim-treesitter',
 			run = function()
@@ -72,6 +64,10 @@ return require('packer').startup(function(use)
   use("folke/zen-mode.nvim")
   use("eandrju/cellular-automaton.nvim")
   use("laytan/cloak.nvim")
-
+  use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        config = function() require("todo-comments").setup {} end
+  }
 end)
 
