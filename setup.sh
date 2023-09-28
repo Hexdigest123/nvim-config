@@ -12,7 +12,7 @@ for i in "${package[@]}"; do
 done
 
 echo "All required packages are installed"
-if [ "$(which git)" = "git not found"]; then
+if [ "$(which git)" = "git not found" ]; then
   echo "Starting to install git"
   exec "$package_to_use install git"
   echo "Git was installed. Continue with nvim"
@@ -24,10 +24,6 @@ echo "Cloned required packer.nvim"
 echo "Installing Node.JS"
 exec "$package_to_use install node"
 echo "Installed Node.JS"
-
-if [ package_to_use = "pacman" ]; then
-  echo "You need to install and build a special package: https://aur.archlinux.org/packages/nvim-packer-git/"
-fi
 
 echo "Now please open packer.lua in ./lua/hexdigest/packer.lua in neovim. Run :so and :PackerSync"
 echo "To install Tabnine please follow the instructions on their github: https://github.com/codota/tabnine-nvim"
