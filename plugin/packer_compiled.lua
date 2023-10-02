@@ -216,6 +216,11 @@ _G.packer_plugins = {
     path = "/Users/hexdigest/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-astro"] = {
+    loaded = true,
+    path = "/Users/hexdigest/.local/share/nvim/site/pack/packer/start/vim-astro",
+    url = "https://github.com/wuelnerdotexe/vim-astro"
+  },
   ["vim-closer"] = {
     loaded = true,
     path = "/Users/hexdigest/.local/share/nvim/site/pack/packer/start/vim-closer",
