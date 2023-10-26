@@ -7,23 +7,26 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+	  'nvim-telescope/telescope.nvim', tag = '0.1.4',
 	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+	  requires = { 'nvim-lua/plenary.nvim' }
   }
 
   use({
       "folke/trouble.nvim",
       config = function()
           require("trouble").setup {
-              icons = false,
-              -- your configuration comes here
-              -- or leave it empty to use the default settings
-              -- refer to the configuration section below
+              icons = true,
           }
       end
   })
-  use({ 'rose-pine/neovim', as = 'rose-pine' })
+  -- use({ 'rose-pine/neovim', as = 'rose-pine' })
+  use({
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  })
   use {
 			'nvim-treesitter/nvim-treesitter',
 			run = function()
@@ -36,6 +39,7 @@ return require('packer').startup(function(use)
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
   use("nvim-treesitter/nvim-treesitter-context");
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use("rstacruz/vim-closer")
   use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -64,11 +68,7 @@ return require('packer').startup(function(use)
   use("folke/zen-mode.nvim")
   use("eandrju/cellular-automaton.nvim")
   use("laytan/cloak.nvim")
-  use('wuelnerdotexe/vim-astro')
-  use {
-        "folke/todo-comments.nvim",
-        requires = "nvim-lua/plenary.nvim",
-        config = function() require("todo-comments").setup {} end
-  }
+  use('sbdchd/neoformat')
+  use('dense-analysis/ale')
 end)
 
